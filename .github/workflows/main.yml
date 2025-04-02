@@ -1,8 +1,8 @@
-name: Run Script Every 3 Minutes
+name: Run Script Every 5 Minutes
 
 on:
   schedule:
-    - cron: "*/3 * * * *"
+    - cron: "*/6 * * * *"
 
 jobs:
   run-script:
