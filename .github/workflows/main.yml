@@ -1,0 +1,24 @@
+name: Run Script Every 3 Minutes
+
+on:
+  schedule:
+    - cron: "*/3 * * * *"
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # If you have dependencies
+
+      - name: Run the script
+        run: python script.py  # Change 'script.py' to your actual script name
